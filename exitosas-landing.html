@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Exitosas — Fórmate como Broker Inmobiliaria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal: #5FB2BE;
+    --teal-dark: #3A8E9A;
+    --pink: #F4A0C8;
+    --lavender: #C4B5E8;
+    --ink: #1B2430;
+    --paper: #FFFFFF;
+    --paper-soft: #FFFFFF;
+    --line: rgba(27,36,48,0.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth; background:#FFFFFF; color-scheme:light;}
+  body{
+    background:#FFFFFF !important;
+    color:var(--ink);
+    font-family:'Manrope', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:0 24px;}
+  a{color:inherit;}
+  img,svg{display:block; max-width:100%;}
+
+  /* ---------- Stamp / signature element ---------- */
+  .stamp{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    border:2.5px solid currentColor;
+    border-radius:50%;
+    transform:rotate(-6deg);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    font-family:'Manrope', sans-serif;
+    font-weight:800;
+    line-height:1.15;
+    text-align:center;
+    flex-shrink:0;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    padding:20px 0 16px;
+    border-bottom:1px solid var(--line);
+  }
+  header .wrap{display:flex; align-items:center; justify-content:space-between;}
+  .logo{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:20px;
+    letter-spacing:0.02em;
+  }
+  .logo span{color:var(--teal-dark);}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:44px 0 28px; position:relative; overflow:hidden;}
+  .eyebrow{
+    display:inline-block;
+    background:var(--lavender);
+    color:var(--ink);
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:6px 14px;
+    border-radius:100px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(32px, 8vw, 44px);
+    margin-bottom:16px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--teal-dark);
+  }
+  .hero p.lead{
+    font-size:17.5px;
+    color:#3C4657;
+    max-width:52ch;
+    margin-bottom:28px;
+  }
+
+  .price-block{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    background:var(--paper-soft);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:20px;
+    margin-bottom:22px;
+  }
+  .price-nums{flex:1;}
+  .price-old{
+    font-size:15px;
+    color:#8A8378;
+    text-decoration:line-through;
+    text-decoration-color:var(--pink);
+    text-decoration-thickness:2px;
+  }
+  .price-new{
+    font-family:'Fraunces', serif;
+    font-size:38px;
+    font-weight:700;
+    color:var(--teal-dark);
+    line-height:1;
+    margin-top:4px;
+  }
+  .price-new sup{font-size:16px; font-weight:600;}
+  .price-stamp{
+    width:74px; height:74px;
+    font-size:10px;
+    color:var(--pink);
+    background:var(--paper);
+  }
+  .price-stamp b{font-size:16px; margin-top:1px;}
+
+  .cta-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:var(--teal);
+    color:#fff;
+    font-family:'Manrope', sans-serif;
+    font-weight:700;
+    font-size:17px;
+    padding:18px 20px;
+    border-radius:12px;
+    text-decoration:none;
+    transition:transform 0.15s ease, background 0.15s ease;
+    border:none;
+    cursor:pointer;
+    box-shadow:0 6px 16px rgba(74,155,168,0.25);
+  }
+  .cta-btn:hover{background:var(--teal-dark); transform:translateY(-1px);}
+  .cta-sub{
+    text-align:center;
+    font-size:13px;
+    color:#8A8378;
+    margin-top:10px;
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:44px 0;}
+  .divider{
+    height:1px;
+    background:var(--line);
+    width:100%;
+  }
+  .section-label{
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--teal-dark);
+    margin-bottom:10px;
+  }
+  section h2{
+    font-size:clamp(24px, 5.5vw, 30px);
+    margin-bottom:16px;
+  }
+
+  /* For whom */
+  .for-list{list-style:none; margin-top:20px;}
+  .for-list li{
+    display:flex;
+    gap:12px;
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+    font-size:16px;
+  }
+  .for-list li:last-child{border-bottom:none;}
+  .for-list .mark{
+    color:var(--teal-dark);
+    font-weight:800;
+    font-family:'Fraunces', serif;
+    flex-shrink:0;
+  }
+
+  /* Includes */
+  .includes{margin-top:20px;}
+  .includes .item{
+    display:flex;
+    gap:16px;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .includes .item:last-child{border-bottom:none;}
+  .includes .num{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:22px;
+    color:var(--pink);
+    flex-shrink:0;
+    width:34px;
+  }
+  .includes h3{
+    font-family:'Manrope', sans-serif;
+    font-weight:700;
+    font-size:16px;
+    margin-bottom:3px;
+  }
+  .includes p{font-size:14.5px; color:#3C4657;}
+
+  /* Hard data section */
+  .data-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    margin-top:20px;
+  }
+  .data-card{
+    background:#fff;
+    border:2px solid var(--teal);
+    border-radius:16px;
+    padding:24px;
+    color:var(--ink);
+  }
+  .data-card:nth-child(2){border-color:var(--pink);}
+  .data-card:nth-child(3){border-color:var(--lavender);}
+  .data-card .big{
+    font-family:'Fraunces', serif;
+    font-size:clamp(30px, 9vw, 40px);
+    font-weight:700;
+    color:var(--teal-dark);
+    line-height:1;
+    margin-bottom:6px;
+  }
+  .data-card:nth-child(2) .big{color:var(--pink);}
+  .data-card:nth-child(3) .big{color:#8B7FC9;}
+  .data-card .label{
+    font-size:14px;
+    color:#3C4657;
+    line-height:1.4;
+  }
+  .data-card .source{
+    font-size:11px;
+    color:#8A93A3;
+    margin-top:10px;
+  }
+
+  /* Story / emotional section */
+  .story-intro{margin-bottom:8px;}
+  .story-card{
+    background:var(--paper-soft);
+    border:1px solid var(--line);
+    border-left:4px solid var(--pink);
+    border-radius:4px 14px 14px 4px;
+    padding:20px 22px;
+    margin-top:16px;
+  }
+  .story-card:nth-child(2){border-left-color:var(--teal);}
+  .story-card:nth-child(3){border-left-color:var(--lavender);}
+  .story-card .who{
+    font-weight:700;
+    font-size:14.5px;
+    margin-bottom:8px;
+    color:var(--teal-dark);
+  }
+  .story-card p{
+    font-size:15.5px;
+    color:#3C4657;
+  }
+  .story-card p.feeling{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:16px;
+    color:var(--ink);
+    margin-top:8px;
+  }
+  .story-bridge{
+    margin-top:28px;
+    padding:24px;
+    background:linear-gradient(135deg, #F1ECFA 0%, #FBEAF3 100%);
+    border-radius:16px;
+    text-align:center;
+  }
+  .story-bridge p{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-style:italic;
+    line-height:1.4;
+    color:var(--ink);
+  }
+
+  /* Testimonial */
+  .testimonial{
+    background:linear-gradient(135deg, #FBEAF3 0%, #F1ECFA 100%);
+    border:1px solid var(--line);
+    color:var(--ink);
+    border-radius:20px;
+    padding:32px 26px;
+    margin-top:20px;
+    position:relative;
+  }
+  .testimonial .quote-mark{
+    font-family:'Fraunces', serif;
+    font-size:60px;
+    color:var(--pink);
+    line-height:0.5;
+    margin-bottom:14px;
+    display:block;
+  }
+  .testimonial p{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-style:italic;
+    line-height:1.45;
+    margin-bottom:20px;
+    color:var(--ink);
+  }
+  .testimonial .who{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Manrope', sans-serif;
+    font-size:14px;
+  }
+  .avatar-dot{
+    width:36px; height:36px;
+    border-radius:50%;
+    background:var(--pink);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    color:var(--ink);
+    font-size:14px;
+    flex-shrink:0;
+  }
+  .who-name{font-weight:700; color:var(--ink);}
+  .who-role{color:#5A6272;}
+
+  /* FAQ */
+  .faq-item{
+    border-bottom:1px solid var(--line);
+    padding:18px 0;
+  }
+  .faq-item summary{
+    cursor:pointer;
+    font-weight:700;
+    font-size:15.5px;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:'+';
+    font-family:'Fraunces', serif;
+    font-size:22px;
+    color:var(--teal-dark);
+    flex-shrink:0;
+    transition:transform 0.2s ease;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item .a{
+    font-size:14.5px;
+    color:#3C4657;
+    margin-top:10px;
+    padding-right:20px;
+  }
+
+  /* Authority */
+  .authority{
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+    background:var(--paper-soft);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:22px;
+    margin-top:20px;
+  }
+  .authority .pic{
+    width:56px; height:56px;
+    border-radius:50%;
+    background:var(--lavender);
+    color:var(--ink);
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .authority h3{
+    font-family:'Manrope', sans-serif;
+    font-weight:700;
+    font-size:16px;
+    margin-bottom:6px;
+  }
+  .authority p{font-size:14.5px; color:#3C4657;}
+  .stat-row{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+    flex-wrap:wrap;
+  }
+  .stat{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:10px 14px;
+    text-align:center;
+    flex:1;
+    min-width:90px;
+  }
+  .stat b{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size:20px;
+    color:var(--teal-dark);
+  }
+  .stat span{font-size:11.5px; color:#5A6272;}
+
+  /* Outcomes */
+  .outcomes{margin-top:20px;}
+  .outcomes .item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    padding:14px 0;
+  }
+  .outcomes .check{
+    width:26px; height:26px;
+    border-radius:50%;
+    background:var(--lavender);
+    color:var(--ink);
+    font-weight:800;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    margin-top:2px;
+  }
+  .outcomes p{font-size:15.5px;}
+  .outcomes b{font-weight:700;}
+
+  /* Value stack */
+  .value-stack{
+    background:#fff;
+    border:1.5px solid var(--teal);
+    border-radius:16px;
+    padding:22px;
+    margin-top:20px;
+  }
+  .value-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+    font-size:14.5px;
+  }
+  .value-row:last-of-type{border-bottom:none;}
+  .value-row .val{font-weight:700; color:#3C4657;}
+  .value-total{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:12px;
+    padding-top:14px;
+    border-top:2px solid var(--teal);
+  }
+  .value-total .label{font-weight:700; font-size:15px;}
+  .value-total .val{
+    font-family:'Fraunces', serif;
+    font-size:22px;
+    font-weight:700;
+    color:#B8AFA3;
+    text-decoration:line-through;
+    text-decoration-color:var(--pink);
+  }
+  .value-today{
+    text-align:center;
+    margin-top:16px;
+    font-size:15px;
+  }
+  .value-today b{
+    font-family:'Fraunces', serif;
+    font-size:26px;
+    color:var(--teal-dark);
+    display:block;
+  }
+
+  /* Urgency band */
+  .urgency{
+    background:var(--teal);
+    color:#fff;
+    text-align:center;
+    padding:16px 20px;
+    font-weight:700;
+    font-size:14.5px;
+    letter-spacing:0.01em;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--paper-soft);
+    text-align:center;
+    padding:52px 0 60px;
+  }
+  .final-cta h2{margin-bottom:12px;}
+  .final-cta p.lead{margin:0 auto 26px; text-align:center;}
+
+  footer{
+    padding:26px 0 40px;
+    text-align:center;
+    font-size:12.5px;
+    color:#8A8378;
+  }
+
+  @media (min-width:640px){
+    .price-block{padding:26px 28px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">exitos<span>as</span></div>
+    <div style="font-size:13px; font-weight:700; color:var(--teal-dark);">Escuela de Brokers</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Lanzamiento · cupos limitados</span>
+    <h1>Fórmate como <em>broker inmobiliaria</em> y vende tu primer departamento nuevo</h1>
+    <p class="lead">El método paso a paso para partir a vender departamentos nuevos desde cero: conocimiento, herramientas y el respaldo de una escuela hecha por y para mujeres.</p>
+
+    <div class="price-block">
+      <div class="price-nums">
+        <div class="price-old">Precio normal $99.990</div>
+        <div class="price-new"><sup>$</sup>39.990</div>
+      </div>
+      <div class="stamp price-stamp">
+        <span>60%</span>
+        <b>OFF</b>
+      </div>
+    </div>
+
+    <a class="cta-btn" href="https://pay.hotmart.com/J106445223N" target="_blank" rel="noopener">Quiero mi cupo — $39.990</a>
+    <div class="cta-sub">Pago 100% seguro con Hotmart · acceso inmediato</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-label story-intro">¿Te ha pasado esto?</div>
+    <h2>Miles de mujeres están donde tú estás ahora</h2>
+
+    <div class="story-card">
+      <div class="who">Camila, 34 años</div>
+      <p>Dejó de trabajar cuando nació su segundo hijo. Hoy sus hijos ya van al colegio y ella siente que perdió el ritmo, la confianza y sobre todo, su propia plata. "Depender de otro para todo" es lo que más le pesa.</p>
+      <p class="feeling">"Quiero volver a tener algo mío, pero sin dejar a mis hijos botados."</p>
+    </div>
+
+    <div class="story-card">
+      <div class="who">Fernanda, 41 años</div>
+      <p>Lleva 15 años en un trabajo que le paga las cuentas, pero no la llena. Ve pasar los años sin ahorros propios, sin crecer, sin ser dueña de su tiempo. Sabe que puede más, pero no sabe por dónde partir.</p>
+      <p class="feeling">"No quiero llegar a los 50 preguntándome qué habría pasado si me hubiera atrevido."</p>
+    </div>
+
+    <div class="story-card">
+      <div class="who">Valentina, 27 años</div>
+      <p>Recién egresada, sin contactos en el rubro inmobiliario ni plata para partir un negocio propio. Ve en redes a otras mujeres vendiendo departamentos y ganando comisiones, pero siente que ese mundo no es para alguien como ella.</p>
+      <p class="feeling">"¿Y si no tengo la 'pinta' de corredora que se supone que hay que tener?"</p>
+    </div>
+
+    <div class="story-bridge">
+      <p>Camila, Fernanda y Valentina no necesitaban un currículum perfecto. Necesitaban un método claro y alguien que les mostrara el camino. Eso es exactamente lo que es Exitosas.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <div class="authority">
+      <div class="pic">AR</div>
+      <div>
+        <h3>Alison Ramírez — tu profesora</h3>
+        <p>MBA, más de 8 años en el rubro inmobiliario y fundadora de Avance Inmobiliario. Formé este método con lo que realmente funciona en terreno, no con teoría de sala de clases.</p>
+        <div class="stat-row">
+          <div class="stat"><b>8+</b><span>años de experiencia</span></div>
+          <div class="stat"><b>MBA</b><span>formación de negocios</span></div>
+          <div class="stat"><b>100%</b><span>enfocado en dptos. nuevos</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">Para quién es</div>
+    <h2>Este curso es para ti si...</h2>
+    <ul class="for-list">
+      <li><span class="mark">→</span> Quieres generar ingresos propios vendiendo departamentos nuevos, aunque nunca hayas trabajado en inmobiliario.</li>
+      <li><span class="mark">→</span> Ya eres corredora, pero quieres profesionalizar tu método y vender más rápido.</li>
+      <li><span class="mark">→</span> Buscas un oficio flexible, con comisiones reales, que puedas hacer part-time o full-time.</li>
+      <li><span class="mark">→</span> Prefieres aprender con una escuela hecha por una mujer que vivió el rubro, no con teoría genérica.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">El mercado no miente</div>
+    <h2>Nunca fue tan buen momento para ser broker</h2>
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="big">552.046</div>
+        <div class="label">viviendas nuevas necesita Chile hoy para cubrir el déficit habitacional — equivalente al 7,9% de todos los hogares del país.</div>
+        <div class="source">Fuente: MINVU / Encuesta Casen</div>
+      </div>
+      <div class="data-card">
+        <div class="big">14%</div>
+        <div class="label">del PIB chileno lo genera el sector inmobiliario, con cerca del 9% del empleo del país.</div>
+        <div class="source">Fuente: Centro de Estudios Públicos</div>
+      </div>
+      <div class="data-card">
+        <div class="big">$1.000.000+</div>
+        <div class="label">es lo que puede significar tu primera comisión al cerrar la venta de un departamento nuevo — muchas brokers empiezan a vender desde sus primeras semanas.</div>
+        <div class="source">Comisión referencial sobre venta de dpto. nuevo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">Lo que vas a lograr</div>
+    <h2>De no saber por dónde partir, a tu primera venta</h2>
+    <div class="outcomes">
+      <div class="item">
+        <div class="check">✓</div>
+        <p><b>Entender el negocio de dptos. nuevos</b> — cómo se arma una venta, qué mira el comprador y qué mira la inmobiliaria.</p>
+      </div>
+      <div class="item">
+        <div class="check">✓</div>
+        <p><b>Tener un guion de venta propio</b> — qué decir en cada etapa, sin improvisar ni sonar vendedora.</p>
+      </div>
+      <div class="item">
+        <div class="check">✓</div>
+        <p><b>Empezar a vender desde tus primeras semanas</b> — no necesitas terminar todo el curso para aplicar y salir a ofrecer. Tu primera comisión puede superar el $1.000.000.</p>
+      </div>
+      <div class="item">
+        <div class="check">✓</div>
+        <p><b>Formar parte de una comunidad activa</b> — dudas resueltas y compañía de otras brokers en el mismo camino.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">Qué incluye</div>
+    <h2>Todo lo que necesitas para partir</h2>
+    <div class="includes">
+      <div class="item">
+        <div class="num">i.</div>
+        <div>
+          <h3>Método completo en video</h3>
+          <p>Clases grabadas, a tu ritmo, con acceso desde tu celular o computador cuando quieras.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">ii.</div>
+        <div>
+          <h3>Cómo vender departamentos nuevos</h3>
+          <p>Foco 100% en el segmento con mejor comisión y mayor demanda: proyectos nuevos para primerizos e inversionistas.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">iii.</div>
+        <div>
+          <h3>Herramientas listas para usar</h3>
+          <p>Guiones, checklist de venta y material que puedes aplicar desde la primera semana.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">iv.</div>
+        <div>
+          <h3>Comunidad de brokers</h3>
+          <p>Acompañamiento junto a otras mujeres que están construyendo lo mismo que tú.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">Todo lo que recibes</div>
+    <h2>Hoy, por muchísimo menos de lo que vale</h2>
+    <div class="value-stack">
+      <div class="value-row"><span>Método completo en video</span><span class="val">$70.000</span></div>
+      <div class="value-row"><span>Guiones y herramientas de venta</span><span class="val">$25.000</span></div>
+      <div class="value-row"><span>Comunidad de brokers</span><span class="val">$15.000</span></div>
+      <div class="value-row"><span>Acceso de por vida a actualizaciones</span><span class="val">$20.000</span></div>
+      <div class="value-total"><span class="label">Valor total</span><span class="val">$130.000</span></div>
+      <div class="value-today">Hoy pagas solo<b>$39.990</b></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">Testimonio</div>
+    <div class="testimonial">
+      <span class="quote-mark">"</span>
+      <p>Me formé directamente con Alison y puedo decir que su método funciona de verdad. Es una líder increíble, aprendí muchísimo con ella.</p>
+      <div class="who">
+        <div class="avatar-dot">JO</div>
+        <div>
+          <div class="who-name">Josefa Orellana</div>
+          <div class="who-role">Broker formada por Alison</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="urgency">⏳ Precio de lanzamiento válido solo por tiempo limitado</div>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">Preguntas frecuentes</div>
+    <h2>Antes de partir</h2>
+
+    <details class="faq-item" open>
+      <summary>¿Necesito experiencia previa?</summary>
+      <div class="a">No. El curso está diseñado para partir desde cero, aunque nunca hayas vendido una propiedad.</div>
+    </details>
+    <details class="faq-item">
+      <summary>¿Cuánto dura el curso?</summary>
+      <div class="a">Es 100% grabado y a tu ritmo. Tú decides cuánto avanzar cada semana.</div>
+    </details>
+    <details class="faq-item">
+      <summary>¿Cómo accedo después de comprar?</summary>
+      <div class="a">Apenas confirmas el pago en Hotmart, recibes acceso inmediato por correo electrónico.</div>
+    </details>
+    <details class="faq-item">
+      <summary>¿Es solo para mujeres?</summary>
+      <div class="a">Exitosas nace enfocada en formar mujeres brokers, pero lo importante es tu compromiso con aprender el método.</div>
+    </details>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Tu primer paso como broker parte hoy</h2>
+    <p class="lead">Cupos de lanzamiento a $39.990. El precio vuelve a $99.990 apenas se cierre la etapa de lanzamiento.</p>
+    <a class="cta-btn" href="https://pay.hotmart.com/J106445223N" target="_blank" rel="noopener">Quiero mi cupo — $39.990</a>
+    <div class="cta-sub">Pago 100% seguro con Hotmart · acceso inmediato</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© Exitosas — Escuela de Brokers · Chile</div>
+</footer>
+
+</body>
+</html>
