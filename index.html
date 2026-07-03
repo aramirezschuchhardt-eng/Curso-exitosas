@@ -4,16 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
-<title>Exitosas — Fórmate como Broker Inmobiliaria</title>
+<title>Escuela Exitosas — Fórmate como Broker Inmobiliaria</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --teal: #5FB2BE;
-    --teal-dark: #3A8E9A;
-    --pink: #F4A0C8;
-    --lavender: #C4B5E8;
+    --teal: #12B3AC;
+    --teal-dark: #0A8B86;
+    --pink: #FF2E9A;
+    --lavender: #7C4DFF;
+    --coral: #FF5B45;
+    --coral-dark: #E8431F;
     --ink: #1B2430;
     --paper: #FFFFFF;
     --paper-soft: #FFFFFF;
@@ -65,24 +67,40 @@
   .logo{
     font-family:'Fraunces', serif;
     font-weight:700;
-    font-size:20px;
+    font-size:21px;
     letter-spacing:0.02em;
+    display:flex;
+    align-items:baseline;
+    gap:6px;
   }
-  .logo span{color:var(--teal-dark);}
+  .logo span{color:var(--coral);}
+  .logo .tag{
+    font-family:'Manrope', sans-serif;
+    font-size:10.5px;
+    font-weight:800;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:#fff;
+    background:linear-gradient(120deg, var(--pink), var(--coral));
+    padding:3px 8px;
+    border-radius:100px;
+    transform:translateY(-4px);
+  }
 
   /* ---------- Hero ---------- */
   .hero{padding:44px 0 28px; position:relative; overflow:hidden;}
   .eyebrow{
     display:inline-block;
-    background:var(--lavender);
-    color:var(--ink);
+    background:linear-gradient(120deg, var(--pink), var(--coral));
+    color:#fff;
     font-size:12.5px;
-    font-weight:700;
+    font-weight:800;
     letter-spacing:0.06em;
     text-transform:uppercase;
-    padding:6px 14px;
+    padding:7px 16px;
     border-radius:100px;
     margin-bottom:18px;
+    box-shadow:0 4px 12px rgba(255,46,154,0.28);
   }
   .hero h1{
     font-size:clamp(32px, 8vw, 44px);
@@ -90,7 +108,7 @@
   }
   .hero h1 em{
     font-style:italic;
-    color:var(--teal-dark);
+    color:var(--coral-dark);
   }
   .hero p.lead{
     font-size:17.5px;
@@ -121,7 +139,7 @@
     font-family:'Fraunces', serif;
     font-size:38px;
     font-weight:700;
-    color:var(--teal-dark);
+    color:var(--coral-dark);
     line-height:1;
     margin-top:4px;
   }
@@ -129,29 +147,45 @@
   .price-stamp{
     width:74px; height:74px;
     font-size:10px;
-    color:var(--pink);
-    background:var(--paper);
+    color:#fff;
+    background:linear-gradient(135deg, var(--pink), var(--coral));
+    border-color:transparent;
+    box-shadow:0 4px 12px rgba(255,46,154,0.3);
   }
   .price-stamp b{font-size:16px; margin-top:1px;}
 
+  @keyframes ctaPulse{
+    0%,100%{ box-shadow:0 8px 20px rgba(255,46,154,0.35), 0 0 0 0 rgba(255,91,69,0.45); }
+    50%{ box-shadow:0 10px 26px rgba(255,46,154,0.45), 0 0 0 10px rgba(255,91,69,0); }
+  }
   .cta-btn{
-    display:block;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
     width:100%;
     text-align:center;
-    background:var(--teal);
+    background:linear-gradient(120deg, var(--coral) 0%, var(--pink) 100%);
     color:#fff;
     font-family:'Manrope', sans-serif;
-    font-weight:700;
-    font-size:17px;
-    padding:18px 20px;
-    border-radius:12px;
+    font-weight:800;
+    font-size:17.5px;
+    letter-spacing:0.01em;
+    text-transform:uppercase;
+    padding:20px 20px;
+    border-radius:14px;
     text-decoration:none;
-    transition:transform 0.15s ease, background 0.15s ease;
+    transition:transform 0.15s ease, filter 0.15s ease;
     border:none;
     cursor:pointer;
-    box-shadow:0 6px 16px rgba(74,155,168,0.25);
+    animation:ctaPulse 2.2s ease-in-out infinite;
   }
-  .cta-btn:hover{background:var(--teal-dark); transform:translateY(-1px);}
+  .cta-btn:hover{filter:brightness(1.08); transform:translateY(-2px) scale(1.01);}
+  .cta-btn .arrow{
+    font-size:20px;
+    transition:transform 0.15s ease;
+  }
+  .cta-btn:hover .arrow{transform:translateX(4px);}
   .cta-sub{
     text-align:center;
     font-size:13px;
@@ -394,7 +428,7 @@
     margin-top:20px;
   }
   .authority .pic{
-    width:56px; height:56px;
+    width:68px; height:68px;
     border-radius:50%;
     background:var(--lavender);
     color:var(--ink);
@@ -405,6 +439,13 @@
     align-items:center;
     justify-content:center;
     flex-shrink:0;
+    overflow:hidden;
+    border:3px solid var(--coral);
+    box-shadow:0 4px 14px rgba(255,91,69,0.25);
+  }
+  .authority .pic img{
+    width:100%; height:100%;
+    object-fit:cover;
   }
   .authority h3{
     font-family:'Manrope', sans-serif;
@@ -509,13 +550,14 @@
 
   /* Urgency band */
   .urgency{
-    background:var(--teal);
+    background:linear-gradient(120deg, var(--coral), var(--pink));
     color:#fff;
     text-align:center;
     padding:16px 20px;
-    font-weight:700;
+    font-weight:800;
     font-size:14.5px;
     letter-spacing:0.01em;
+    text-transform:uppercase;
   }
 
   /* Final CTA */
@@ -537,14 +579,35 @@
   @media (min-width:640px){
     .price-block{padding:26px 28px;}
   }
+
+  /* WhatsApp floating button */
+  @keyframes waPulse{
+    0%,100%{ box-shadow:0 6px 18px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.4); }
+    50%{ box-shadow:0 8px 22px rgba(37,211,102,0.55), 0 0 0 9px rgba(37,211,102,0); }
+  }
+  .whatsapp-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:58px; height:58px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+    animation:waPulse 2.4s ease-in-out infinite;
+    transition:transform 0.15s ease;
+  }
+  .whatsapp-float:hover{transform:scale(1.08);}
+  .whatsapp-float svg{width:29px; height:29px;}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <div class="logo">exitos<span>as</span></div>
-    <div style="font-size:13px; font-weight:700; color:var(--teal-dark);">Escuela de Brokers</div>
+    <div class="logo">Escuela Exitos<span>as</span><span class="tag">Brokers</span></div>
   </div>
 </header>
 
@@ -565,7 +628,7 @@
       </div>
     </div>
 
-    <a class="cta-btn" href="https://pay.hotmart.com/J106445223N" target="_blank" rel="noopener">Quiero mi cupo — $39.990</a>
+    <a class="cta-btn" href="https://pay.hotmart.com/J106445223N" target="_blank" rel="noopener">Quiero mi cupo — $39.990 <span class="arrow">→</span></a>
     <div class="cta-sub">Pago 100% seguro con Hotmart · acceso inmediato</div>
   </div>
 </section>
@@ -596,7 +659,7 @@
     </div>
 
     <div class="story-bridge">
-      <p>Camila, Fernanda y Valentina no necesitaban un currículum perfecto. Necesitaban un método claro y alguien que les mostrara el camino. Eso es exactamente lo que es Exitosas.</p>
+      <p>Camila, Fernanda y Valentina no necesitaban un currículum perfecto. Necesitaban un método claro y alguien que les mostrara el camino. Eso es exactamente lo que es <strong>Escuela Exitosas</strong>.</p>
     </div>
   </div>
 </section>
@@ -606,9 +669,9 @@
 <section>
   <div class="wrap">
     <div class="authority">
-      <div class="pic">AR</div>
+      <div class="pic"><img src="images/alison.jpg" alt="Alison Ramírez, fundadora de Escuela Exitosas"></div>
       <div>
-        <h3>Alison Ramírez — tu profesora</h3>
+        <h3>Alison Ramírez — fundadora de Escuela Exitosas</h3>
         <p>MBA, más de 8 años en el rubro inmobiliario y fundadora de Avance Inmobiliario. Formé este método con lo que realmente funciona en terreno, no con teoría de sala de clases.</p>
         <div class="stat-row">
           <div class="stat"><b>8+</b><span>años de experiencia</span></div>
@@ -786,7 +849,11 @@
     </details>
     <details class="faq-item">
       <summary>¿Es solo para mujeres?</summary>
-      <div class="a">Exitosas nace enfocada en formar mujeres brokers, pero lo importante es tu compromiso con aprender el método.</div>
+      <div class="a">Escuela Exitosas nace enfocada en formar mujeres brokers, pero lo importante es tu compromiso con aprender el método.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Tengo dudas, ¿con quién hablo?</summary>
+      <div class="a">Escríbenos directo por WhatsApp al <a href="https://wa.me/56959178358?text=Hola%2C%20tengo%20dudas%20sobre%20Escuela%20Exitosas" target="_blank" rel="noopener" style="color:var(--teal-dark); font-weight:700; text-decoration:underline;">+56 9 5917 8358</a> y te respondemos directamente.</div>
     </details>
   </div>
 </section>
@@ -795,14 +862,18 @@
   <div class="wrap">
     <h2>Tu primer paso como broker parte hoy</h2>
     <p class="lead">Cupos de lanzamiento a $39.990. El precio vuelve a $99.990 apenas se cierre la etapa de lanzamiento.</p>
-    <a class="cta-btn" href="https://pay.hotmart.com/J106445223N" target="_blank" rel="noopener">Quiero mi cupo — $39.990</a>
+    <a class="cta-btn" href="https://pay.hotmart.com/J106445223N" target="_blank" rel="noopener">Quiero mi cupo — $39.990 <span class="arrow">→</span></a>
     <div class="cta-sub">Pago 100% seguro con Hotmart · acceso inmediato</div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">© Exitosas — Escuela de Brokers · Chile</div>
+  <div class="wrap">© Escuela Exitosas · Chile</div>
 </footer>
+
+<a class="whatsapp-float" href="https://wa.me/56959178358?text=Hola%2C%20tengo%20dudas%20sobre%20Escuela%20Exitosas" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 32 32" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C9.096 3 3.5 8.596 3.5 15.5c0 2.34.646 4.53 1.77 6.404L3 29l7.278-2.238a12.44 12.44 0 0 0 5.723 1.401h.005c6.905 0 12.5-5.596 12.5-12.5S22.906 3 16.001 3zm0 22.79h-.004a10.28 10.28 0 0 1-5.24-1.435l-.376-.223-3.89 1.196 1.213-3.79-.245-.39a10.27 10.27 0 0 1-1.575-5.448c0-5.68 4.622-10.302 10.302-10.302 2.75 0 5.335 1.072 7.283 3.02a10.234 10.234 0 0 1 3.017 7.286c0 5.68-4.62 10.302-10.485 10.302-.017 0 0 0 0 0zm5.64-7.71c-.31-.155-1.83-.903-2.113-1.006-.284-.103-.49-.155-.697.155-.207.31-.8 1.006-.98 1.213-.18.207-.362.233-.671.078-.31-.155-1.31-.483-2.494-1.538-.922-.823-1.545-1.84-1.726-2.15-.18-.31-.02-.478.136-.633.14-.14.31-.362.465-.543.155-.18.207-.31.31-.517.103-.207.052-.388-.026-.543-.078-.155-.697-1.68-.955-2.3-.252-.605-.508-.523-.697-.533-.18-.008-.388-.01-.594-.01-.207 0-.543.078-.827.388-.284.31-1.084 1.06-1.084 2.585 0 1.526 1.11 3 1.264 3.207.155.207 2.184 3.335 5.29 4.677.74.32 1.317.51 1.767.653.742.236 1.418.203 1.952.123.596-.089 1.83-.748 2.088-1.47.258-.723.258-1.343.18-1.47-.077-.129-.284-.207-.594-.362z"/></svg>
+</a>
 
 </body>
 </html>
